@@ -1,4 +1,5 @@
-import HomePage from './components/homePage';
+import React from 'react';
+import HomePage from './components/homepage/homePage';
 import './App.css';
 
 
