@@ -1,11 +1,12 @@
 import React from 'react';
-import Data from '../data/data';
+import Main from '../cards/main';
+import './style.css';
 
 const HomePage = () => {
     return (
-        <div>
-            <h1>Hello rickkk</h1>
-            <Data/>
+        <div className="HomePage">
+            <h1 id="title">Morty and Rick</h1>
+            <Main/>
         </div>
     )
 };

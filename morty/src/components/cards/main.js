@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
-import './data.css';
+import './style.css';
 
-const Data = () => {
+const Main = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -17,13 +17,14 @@ const Data = () => {
     <div className="cardWrapper">
       {data.map((data) => (
         <div className="card" key={data.id}>
-          <h4>Name: {data.name}</h4>
+          <h4>{data.name}</h4>
           <p>Species: {data.species}</p>
-          <img src={data.url} alt="img" />
+          <img src={data.image} alt="img" />
+          <p>Status: {data.status}</p>
         </div>
       ))}
     </div>
   );
 }
 
-export default Data;
+export default Main;

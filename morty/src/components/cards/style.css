@@ -1,0 +1,19 @@
+
+.cardWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+
+h4 {
+    margin-bottom: 5px;
+}
+
+p {
+    margin-top: 5px;
+}
+
+img {
+    border-radius: 5%;
+}
