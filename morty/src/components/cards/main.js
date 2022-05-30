@@ -19,8 +19,11 @@ const Main = () => {
         <div className="card" key={data.id}>
           <h4>{data.name}</h4>
           <p>Species: {data.species}</p>
-          <img src={data.image} alt="img" />
-          <p>Status: {data.status}</p>
+          <div className="container">
+            <img className="image" src={data.image} alt="Avatar" />
+            <div class="overlay">Status: {data.status}</div>
+          </div>
+          <p>Location - {data.location.name}</p>
         </div>
       ))}
     </div>
