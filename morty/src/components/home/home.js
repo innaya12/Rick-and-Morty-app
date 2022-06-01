@@ -2,13 +2,13 @@ import React from 'react';
 import Main from '../cards/main';
 import './style.css';
 
-const HomePage = () => {
+const Home = () => {
     return (
-        <div className="HomePage">
+        <div className="Home">
             <h1 id="title">Morty and Rick</h1>
             <Main/>
         </div>
     )
 };
 
-export default HomePage;
+export default Home;

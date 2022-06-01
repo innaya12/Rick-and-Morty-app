@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
+import { Link } from 'react-router-dom'; 
 import './style.css';
 
 const Main = () => {
@@ -20,8 +21,10 @@ const Main = () => {
           <h4>{data.name}</h4>
           <p>Species: {data.species}</p>
           <div className="container">
-            <img className="image" src={data.image} alt="Avatar" />
-            <div class="overlay">Status: {data.status}</div>
+            <Link to={{ pathname: '/character'}}>
+              <img className="image" src={data.image} alt="Avatar" />
+            </Link>
+            <div className="overlay">Status: {data.status}</div>
           </div>
           <p>Location - {data.location.name}</p>
         </div>
