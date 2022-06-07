@@ -3,9 +3,10 @@ import { useLocation } from "react-router-dom";
 import axios from "axios";
 import './style.css';
 
-const SingleCard = (props) => {
+const SingleCard = () => {
   let Location = useLocation();
   const [character, setCharacterById] = useState();
+
   useEffect(() => {
     axios
     .get(`https://rickandmortyapi.com/api/character/${Location.state.id}`)
@@ -14,15 +15,14 @@ const SingleCard = (props) => {
 
   return (
     <div className="cardWrapper">
-        <h1>singleCard</h1>
-        {typeof character !== 'undefined' &&
-          <div className="card">
-              <h4>{character.name}</h4>
-              <p>Species: {character.species}</p>
-              <img src={character.image} alt="img" />
-              <p>Status: {character.status}</p>
-          </div>
-        }
+      {typeof character !== 'undefined' &&
+        <div className="animationDiv">
+          <h1>{character.name}</h1>
+          <p><b>Species:</b> {character.species}</p>
+          <img src={character.image} alt="img" className="singleImage"/>
+          <p><b>Status:</b> {character.status}</p>
+        </div>
+      }
     </div>
   );
 }

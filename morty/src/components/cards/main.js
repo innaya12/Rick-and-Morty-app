@@ -3,10 +3,9 @@ import axios from "axios";
 import { Link } from 'react-router-dom'; 
 import './style.css';
 
-const Main = (props) => {
+const Main = () => {
   const [data, setData] = useState([]);
-  const [number, setId] = useState(7);
-
+  const [id, setId] = useState('');
 
   useEffect(() => {
     axios
@@ -14,12 +13,8 @@ const Main = (props) => {
     .then((response) => setData(response.data.results));
   }, []);
 
-  const imageClick = (id) => {
-    setId(id);
-  }
-
   return (
-    <div className="cardWrapper">
+    <div className="cardsWrapper">
       {data.map((data) => (
         <div className="card" key={data.id}>
           <h4>{data.name}</h4>
@@ -27,8 +22,8 @@ const Main = (props) => {
           <div className="container">
             <Link 
               to={ '/character' } 
-              state= {{ id: number }}>
-              <img className="image" src={data.image} alt="Avatar" onClick={() => imageClick(data.id)} />
+              state = {{ id: data.id }}>
+              <img className="image" src={data.image} alt="Avatar" />
             </Link>
             <div className="overlay">Status: {data.status}</div>
           </div>
