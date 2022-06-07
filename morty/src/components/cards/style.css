@@ -1,9 +1,21 @@
-
 .cardWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cardsWrapper {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
+h1 {
+    animation-name: title;
+    animation:spin 7s linear ;
+    animation-delay: 1.5s;
+}
+
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
 h4 {
     margin-bottom: 5px;
@@ -17,6 +29,30 @@ p {
     position: relative;
     max-width: 300px;
 }
+
+.animationDiv {
+    height: 100px;
+    position: relative;
+    animation-name: divImage;
+    animation-duration: 6s;
+}
+
+@keyframes divImage {
+    0%   {left:0px; top:0px;}
+    25%  {left:200px; top:0px;}
+    50%  {left:200px; top:200px;}
+    75%  {left:0px; top:200px;}
+    100% {left:0px; top:0px;}
+}
+
+.singleImage {
+    border-radius: 60%;
+    position: relative;
+    animation:spin 4.5s linear ;
+    animation-direction: reverse;
+    animation-iteration-count: 2;
+}
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }  
 
 .image {
     border-radius: 15px;
